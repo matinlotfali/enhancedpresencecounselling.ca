@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+p {
+    margin-bottom: 30px;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 10pt;
+}
+
+h2 {
+    margin-bottom: 10pt;
+}
+h3 {
+    margin-bottom: 5pt;
+}
+ul {
+    margin-left: 30px;
+    margin-bottom: 1.5em;
+}
+
+body {
+    font-family: "Noto Sans Arabic", sans-serif;
+    color: #333;
+    font-size: 12pt;
+    line-height: 150%;
+}
+
+.banner {
+    --banner-image: none;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background-image:
+        var(--banner-image),
+        linear-gradient(
+            rgba(0,0,0,0) 70%,
+            rgba(0,0,0,0.5)
+        );
+    background-color: gray;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    background-attachment: fixed;
+}
+
+.banner#banner1 {
+    --banner-image: url(img/banner1.jpg);
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding: 5vh calc(50vw - 500px);
+    box-sizing: border-box;
+    color: white;
+    text-shadow: 5px 5px 5px #222;
+    font-size: 14pt;
+    font-weight: bold;
+}
+.banner#banner1 h1 {
+    font-size: 24pt;
+    line-height: 120%;
+    padding-bottom: 20px;
+}
+
+.banner#banner2 { --banner-image: url(img/banner2.jpg); }
+.banner#banner3 { --banner-image: url(img/banner3.jpg); }
+.banner#banner4 { --banner-image: url(img/banner4.jpg); }
+
+@media screen and (max-width: 1100px) {
+    .banner#banner1 {
+        padding: 5vh 50px;
+    }
+}
+
+nav > div, section {
+    max-width: 1000px;
+    margin: auto;
+    padding: 50px;
+}
+
+nav {
+    font-weight: bold;
+    color: #222;
+    position: sticky;
+    top: 0;
+    background: white;
+    height: 80px;
+    box-sizing: border-box;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+nav > div {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    align-items: center;
+    padding: 0;
+    height: 100%;
+}
+
+nav a {
+    color: inherit;
+    text-decoration: none;
+    font-size: 10pt;
+}
+
+section {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 20px;
+}
+
+section > * {
+    min-width: 200px;
+}
