@@ -6,7 +6,6 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-snap-type: y proximity;
     scroll-padding-top: 80px;
 }
 
@@ -120,8 +119,6 @@ section {
     justify-content: space-between;
     flex-wrap: wrap;
     row-gap: 20px;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
 }
 
 section > * {
