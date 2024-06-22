@@ -49,9 +49,8 @@ body {
         );
     background-color: gray;
     background-size: cover;
-    background-position: center;
+    background-position: right;
     background-blend-mode: overlay;
-    background-attachment: fixed;
 }
 
 .banner#banner1 {
@@ -131,6 +130,9 @@ nav .hamburger-menu:before {
 @media screen and (max-width: 720px) {
     html {
         scroll-padding-top: 250px;
+    }
+    .banner {
+        height: calc(80vh - 80px);
     }
     nav > div {
         flex-direction: column;
