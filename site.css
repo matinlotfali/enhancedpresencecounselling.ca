@@ -32,6 +32,7 @@ ul {
 body {
     font-family: "Noto Sans Arabic", sans-serif;
     color: #333;
+    background: #ffffee;
     font-size: 12pt;
     line-height: 150%;
 }
@@ -92,26 +93,79 @@ nav {
     color: #222;
     position: sticky;
     top: 0;
-    background: white;
-    height: 80px;
+    background: lightgoldenrodyellow;
     box-sizing: border-box;
     border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.25);
+    padding: 0 50px;
+    max-height: 80px;
+    overflow: hidden;
+    transition: 0.5s;
 }
 
 nav > div {
     display: flex;
     flex-direction: row;
-    gap: 50px;
+    gap: 15px 50px;
     align-items: center;
-    padding: 0;
-    height: 100%;
+    padding: 27px 0;
 }
 
 nav a {
     color: inherit;
     text-decoration: none;
     font-size: 10pt;
+    transition: 0.5s;
+}
+
+nav .hamburger-menu {
+    align-self: baseline;
+    cursor: pointer;
+    display: none;
+}
+nav .hamburger-menu:before {
+    content: '☰';
+    display: block;
+}
+
+@media screen and (max-width: 720px) {
+    html {
+        scroll-padding-top: 250px;
+    }
+    nav > div {
+        flex-direction: column;
+    }
+    nav a {
+        opacity: 0;
+    }
+    nav a.down-arrow,
+    nav span {
+        display: none;
+    }
+    nav .hamburger-menu {
+        display: block;
+    }
+
+    nav.shown {
+        max-height: 300px;
+    }
+    nav.shown .hamburger-menu:before {
+        content: '×';
+    }
+    nav.shown a {
+        opacity: 1;
+    }
+}
+
+nav a.down-arrow,
+nav .hamburger-menu:before {
+    font-size: 20pt;
+    color: gray;
+    font-weight: lighter;
+}
+
+nav span {
+    flex: 1
 }
 
 section {
@@ -122,12 +176,19 @@ section {
 }
 
 section > * {
-    min-width: 200px;
+    min-width: 300px;
     max-width: 800px;
 }
 
+section > div {
+    flex: 1;
+}
+
+html[dir=rtl] section > div {
+    text-align: right;
+}
+
 footer {
-    background: white;
     border-top: 1px solid #eee;
     text-align: center;
     padding: 30px;
